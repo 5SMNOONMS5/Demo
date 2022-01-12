@@ -40,7 +40,6 @@ If you discover any security related issues, please email Demo@gmail.com instead
 
 ## Credits
 
--   [Demo](https://github.com/stephenchen)
 -   [All Contributors](../../contributors)
 
 ## License

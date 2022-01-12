@@ -3,12 +3,17 @@
 namespace StephenChen\Demo\Tests;
 
 use Mockery as m;
-use PHPUnit\Framework\TestCase;
+use Orchestra\Testbench\TestCase;
 use StephenChen\Demo\Demo;
 use StephenChen\Demo\Show;
 
 class DemoTest extends TestCase
 {
+    protected function getEnvironmentSetUp($app)
+    {
+        $app[ 'config' ]->set('demo.value', 'a demo value');
+    }
+
     public function test_show()
     {
         $result = 'show';                               // Arrange
@@ -27,5 +32,15 @@ class DemoTest extends TestCase
         $demo = new Demo($mock);
 
         $this->assertEquals($result, $demo->echoDemo()); // Assert
+    }
+
+    public function test_get_config_value_from_demo_calss()
+    {
+        $mock  = m::mock(Show::class);    // Act
+        $demo  = new Demo($mock);
+        $value = $demo->getValueFromConfig();
+
+        $this->assertNotNull($value);           // Assert
+        $this->assertNotEmpty($value);
     }
 }

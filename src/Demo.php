@@ -16,4 +16,9 @@ class Demo
         $value = $this->show->echoShow();
         return "demo_{$value}";
     }
+
+    public function getValueFromConfig()
+    {
+        return config('demo.value');
+    }
 }
