@@ -1,0 +1,56 @@
+{
+    "name": "stephenchen/demo",
+    "description": "Demo purpose ",
+    "keywords": [
+        "stephenchen",
+        "demo"
+    ],
+    "homepage": "https://github.com/stephenchen/demo",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Demo",
+            "email": "Demo@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "StephenChen\\Demo\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StephenChen\\Demo\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StephenChen\\Demo\\DemoServiceProvider"
+            ],
+            "aliases": {
+                "Demo": "StephenChen\\Demo\\DemoFacade"
+            }
+        }
+    }
+}
