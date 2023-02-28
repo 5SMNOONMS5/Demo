@@ -1,3 +1,7 @@
+# Purpose
+
+[For this article](https://medium.com/@tasb00429/step-by-step-building-a-package-for-the-laravel-project-ee3604bbbe82)
+
 # Very short description of the package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/stephenchen/demo.svg?style=flat-square)](https://packagist.org/packages/stephenchen/demo)
